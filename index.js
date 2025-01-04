@@ -23,7 +23,7 @@ let fighters = [
     'Gosetsu Katsushika',
     'Kanji Meguro',
     'Tatsuki Bunkyo',
-    'Masuru Kita',
+    'Masaru Kita',
     'Mika Shibuya',
     'Doshi Nakano',
     'Kuro Minato',

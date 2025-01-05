@@ -9,18 +9,24 @@
         <section>
             <h1>Welcome to Dear Days!</h1>
 
-            <form action="/submit" method="POST">
+            <form action="/random" method="GET">
                 <h4>Who are you fighting today?</h4>
                 <br>
-
                 <!-- random opponent -->
                <% if (locals.RandomFighter) { %>
-                    <h2>YOU'RE FIGHTING:</h2> <%= RandomFighter %> 
+                    <h2>YOU'RE FIGHTING:</h2> 
+                    <%= RandomFighter %> 
+                    <br>
                 <% } else { %>
-                <label for="random-fight-btn">
-                    <input type="submit" id="random-fight-btn" value="Random Opponent">
-                </label>
+                    <label for="random-opponent">
+                        <input type="submit" id="random-opponent" value="Random Opponent">
+                    </label>
                 <% } %>
+            </form>
+            <br />
+            <br />
+            <form action="/return" method="GET">
+                <label for="return-home"><input type="submit" id="return-home" value="Return to Home"></label>
             </form>
         </section>
     </body>

@@ -50,12 +50,17 @@ app.get('/', (req, res) => {
 });
 
 // random-opponent route
-app.post('/submit', (req, res) => {
-    const randomNumber = Math.floor(Math.random() * fighters.length);
-    const randomFighter = fighters[randomNumber];
+app.get('/random', (req, res) => {
+    const randomFighter = fighters[Math.floor(Math.random() * fighters.length)];
     console.log(randomFighter);
     res.render('home.ejs', {RandomFighter: randomFighter});
 });
+
+app.get('/return', (req, res) => {
+    console.log('return to home page');
+    res.redirect('/');
+});
+
 
 app.listen(port, (req, res) => {
     console.log(`Listening on port ${port}`);

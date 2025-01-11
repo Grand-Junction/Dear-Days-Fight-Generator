@@ -59,7 +59,7 @@ app.get('/', (req, res) => {
 app.get('/random', (req, res) => {
     const randomFighter = fighters[Math.floor(Math.random() * fighters.length)];
     console.log(randomFighter);
-    res.render('home.ejs', {RandomFighter: randomFighter});
+    res.render('random.ejs', {RandomFighter: randomFighter});
 });
 
 app.get('/return', (req, res) => {

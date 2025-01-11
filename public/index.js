@@ -46,7 +46,7 @@ let fighters = [
 
 // home-page route
 app.get('/', (req, res) => {
-    res.render('home.ejs');
+    res.render('../views/home.ejs');
 });
 
 // random-opponent route

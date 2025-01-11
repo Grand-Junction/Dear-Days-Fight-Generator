@@ -5,8 +5,12 @@ import ejs from 'ejs';
 const app = express();
 const port = 3000;
 
+// bodyparser for handling input
 app.use(bodyParser.urlencoded({extended: true}));
+// mounting middleware for rendering static files
+app.use(express.static('public'));
 
+// fighters array for randomly selected opponents
 let fighters = [
     'Yuki Ichidoji',
     'Yu-Yu Kondo',
@@ -44,9 +48,11 @@ let fighters = [
     'Samuel Fredson'
 ];
 
+
+
 // home-page route
 app.get('/', (req, res) => {
-    res.render('../views/home.ejs');
+    res.sendFile('index.html');
 });
 
 // random-opponent route

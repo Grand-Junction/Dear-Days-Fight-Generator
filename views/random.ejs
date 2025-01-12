@@ -11,32 +11,33 @@
 
             <form action="/random" method="GET">
                 <h4>Who are you fighting today?</h4>
-                <br>
+
+            <br />
+            <br />
+    
                 <!-- random opponent -->
                <% if (locals.RandomFighter) { %>
                     <h2>YOU'RE FIGHTING:</h2> 
                     <h2>
                         <%= RandomFighter %> 
                     </h2>
-                    
-                    <br>
+
                 <% } else { %>
                     <label for="random-opponent">
                         <input type="submit" id="random-opponent" value="Random Opponent">
                     </label>
                 <% } %>
             </form>
+            
             <br />
             <br />
 
                  <!-- return home button -->
-                <form action="/return" method="get">          
-                    <label for="home-btn">
-                        <button id="home-btn" >Return to Home Page</button>
-                    </label>
-                </form>
-
+                 <label for="home-btn">
+                    <button id="home-btn" >Return to Home Page</button>
+                </label>
 
         </section>
+        <script src="index.js"></script>
     </body>
 </html>

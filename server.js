@@ -190,13 +190,26 @@ app.get('/', (req, res) => {
     res.sendFile('index.html');
 });
 
-// random-opponent route
+// random-opponent & difficulty route
 app.get('/random', (req, res) => {
-    const randomFighter = fighters[Math.floor(Math.random() * fighters.length)].name;
-    console.log(randomFighter);
-    res.render('random.ejs', {RandomFighter: randomFighter});
-});
+    // get random fighter
+    const randomFighter = fighters[Math.floor(Math.random() * fighters.length)];
 
+    // generate random fighter's name
+    const randomFighterName = randomFighter.name;
+    console.log(randomFighterName);
+
+    //  generate random fighter's difficulty level
+    const randomFighterDiff = randomFighter.level;
+    console.log(randomFighterDiff);
+
+    // generate random level choice
+    const randomFighterTotal = randomFighterDiff[Math.floor(Math.random() * randomFighterDiff.length)];
+    console.log(randomFighterTotal);
+
+    // return result
+    res.render('random.ejs', {RandomFighter: randomFighterName, RandomLevel: randomFighterTotal});
+});
 
 app.listen(port, (req, res) => {
     console.log(`Listening on port ${port}`);

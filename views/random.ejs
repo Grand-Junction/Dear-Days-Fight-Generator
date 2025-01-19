@@ -12,25 +12,23 @@
             <form action="/random" method="GET">
                 <h4>Who are you fighting today?</h4>
 
-            <br />
-            <br />
-    
-                <!-- random opponent -->
-               <% if (locals.RandomFighter) { %>
-                    <h2>YOU'RE FIGHTING:</h2> 
-                    <h2>
+            <br /><br />
+            
+            <!-- random opponent -->
+                <% if (locals.RandomFighter && locals.RandomLevel) { %>
+                    <h2>YOUR OPPONENT FOR THIS CARD FIGHT:</h2> 
+                    <h3>
                         <%= RandomFighter %> 
-                    </h2>
+                    </h3>
 
-                <% } else { %>
-                    <label for="random-opponent">
-                        <input type="submit" id="random-opponent" value="Random Opponent">
-                    </label>
+                    <h2>FIGHTER DIFFICULTY:</h2> 
+                    <h3>
+                        <%= RandomLevel %> 
+                    </h3>
                 <% } %>
             </form>
-            
-            <br />
-            <br />
+
+            <br /> <br />
 
                  <!-- return home button -->
                  <label for="home-btn">

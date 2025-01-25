@@ -209,10 +209,10 @@ app.get('/random', (req, res) => {
 });
 
 // random-opponent & difficulty route (chosen nation)
-app.get('/random-nation', (req, res) => {
+app.post('/select', (req, res) => {
 
     //grab req.body dropdown choice
-    console.log(req.body);
+    console.log(req.body.nation);
     
     //filter through and grab only selected nation
     const newFightersKS = [];

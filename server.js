@@ -201,9 +201,39 @@ app.get('/random', (req, res) => {
 
     //  generate random fighter's difficulty level
     const randomFighterDiff = randomFighter.level;
-    console.log(randomFighterDiff);
+    const randomFighterTotal = randomFighterDiff[Math.floor(Math.random() * randomFighterDiff.length)];
+    console.log(randomFighterTotal);
 
-    // generate random level choice
+    // return result
+    res.render('random.ejs', {RandomFighter: randomFighterName, RandomLevel: randomFighterTotal});
+});
+
+// random-opponent & difficulty route (chosen nation)
+app.get('/random-nation', (req, res) => {
+
+    //grab req.body dropdown choice
+    console.log(req.body);
+    
+    //filter through and grab only selected nation
+    const newFightersKS = [];
+    const randomFighterNation = fighters.filter(
+            function (fighter) {
+                if (fighter.nation === 'Keter Sanctuary') {
+                    newFightersKS.push(fighter);
+                }
+            }
+    );
+    console.log(newFightersKS);
+    
+    // get random fighter
+    const randomFighter = fighters[Math.floor(Math.random() * fighters.length)];
+
+    // generate random fighter's name
+    const randomFighterName = randomFighter.name;
+    console.log(randomFighterName);
+
+    //  generate random fighter's difficulty level
+    const randomFighterDiff = randomFighter.level;
     const randomFighterTotal = randomFighterDiff[Math.floor(Math.random() * randomFighterDiff.length)];
     console.log(randomFighterTotal);
 

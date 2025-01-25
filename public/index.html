@@ -19,6 +19,27 @@
                         <input type="submit" id="random-opponent" value="Random Opponent">
                     </label>
             </form>
+            <br /> <br /> 
+
+            <!-- Random Fight Button -->
+            <form action="/select" method="POST">
+                <label for="select-nation">
+                    <h4>Which nation will you fight with today?</h4>
+                    <label for="nation">Choose Your Nation: 
+                        <br /> <br /> 
+                        <select name="nation" id="nation">
+                            <option value="keter">Keter Sanctuary</option>
+                            <option value="dragon">Dragon Empire</option>
+                            <option value="stoicheia">Stoicheia</option>
+                            <option value="dark">Dark States</option>
+                            <option value="brandt">Brandt Gate</option>
+                            <option value="lyrical">Lyrical Monasterio</option>
+                        </select>
+                    </label>
+                    <br /> <br /> 
+                    <input type="submit" id="select-nation" value="Select Nation">
+                </label>
+            </form>
 
             <br />
         </section>

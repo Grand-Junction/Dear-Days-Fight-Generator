@@ -215,30 +215,35 @@ app.post('/select', (req, res) => {
     console.log(req.body.nation);
     
     //filter through and grab only selected nation
-    const newFightersKS = [];
-    const randomFighterNation = fighters.filter(
-            function (fighter) {
-                if (fighter.nation === 'Keter Sanctuary') {
-                    newFightersKS.push(fighter);
+    switch(req.body.nation) {
+        case "keter":
+
+            const newFightersKS = fighters.filter(
+                function (e, i) {
+                    if (e.nation === 'Keter Sanctuary') {
+                        return i;
+                    }
                 }
-            }
-    );
-    console.log(newFightersKS);
+            );
+
+            // get random fighter
+            const randomFighterKS = newFightersKS[Math.floor(Math.random() * newFightersKS.length)];
+
+            // generate random fighter's name
+            const randomFighterNameKS = randomFighterKS.name;
+            console.log(randomFighterNameKS);
+
+            //  generate random fighter's difficulty level
+            const randomFighterDiffKS = randomFighterKS.level;
+            const randomFighterTotalKS = randomFighterDiffKS[Math.floor(Math.random() * randomFighterDiffKS.length)];
+            console.log(randomFighterTotalKS);
+
+            // return result
+            res.render('random.ejs', {RandomFighter: randomFighterNameKS, RandomLevel: randomFighterTotalKS});
+            break;
+    }
     
-    // get random fighter
-    const randomFighter = fighters[Math.floor(Math.random() * fighters.length)];
 
-    // generate random fighter's name
-    const randomFighterName = randomFighter.name;
-    console.log(randomFighterName);
-
-    //  generate random fighter's difficulty level
-    const randomFighterDiff = randomFighter.level;
-    const randomFighterTotal = randomFighterDiff[Math.floor(Math.random() * randomFighterDiff.length)];
-    console.log(randomFighterTotal);
-
-    // return result
-    res.render('random.ejs', {RandomFighter: randomFighterName, RandomLevel: randomFighterTotal});
 });
 
 app.listen(port, (req, res) => {

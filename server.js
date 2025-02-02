@@ -241,6 +241,136 @@ app.post('/select', (req, res) => {
             // return result
             res.render('random.ejs', {RandomFighter: randomFighterNameKS, RandomLevel: randomFighterTotalKS});
             break;
+
+            case "dragon":
+
+            const newFightersDE = fighters.filter(
+                function (e, i) {
+                    if (e.nation === 'Dragon Empire') {
+                        return i;
+                    }
+                }
+            );
+
+            // get random fighter
+            const randomFighterDE = newFightersDE[Math.floor(Math.random() * newFightersDE.length)];
+
+            // generate random fighter's name
+            const randomFighterNameDE = randomFighterDE.name;
+            console.log(randomFighterNameDE);
+
+            //  generate random fighter's difficulty level
+            const randomFighterDiffDE = randomFighterDE.level;
+            const randomFighterTotalDE = randomFighterDiffDE[Math.floor(Math.random() * randomFighterDiffDE.length)];
+            console.log(randomFighterTotalDE);
+
+            // return result
+            res.render('random.ejs', {RandomFighter: randomFighterNameDE, RandomLevel: randomFighterTotalDE});
+            break;
+
+            case "stoicheia":
+
+            const newFightersS = fighters.filter(
+                function (e, i) {
+                    if (e.nation === 'Stoicheia') {
+                        return i;
+                    }
+                }
+            );
+
+            // get random fighter
+            const randomFighterS = newFightersS[Math.floor(Math.random() * newFightersS.length)];
+
+            // generate random fighter's name
+            const randomFighterNameS = randomFighterS.name;
+            console.log(randomFighterNameS);
+
+            //  generate random fighter's difficulty level
+            const randomFighterDiffS = randomFighterS.level;
+            const randomFighterTotalS = randomFighterDiffS[Math.floor(Math.random() * randomFighterDiffS.length)];
+            console.log(randomFighterTotalS);
+
+            // return result
+            res.render('random.ejs', {RandomFighter: randomFighterNameS, RandomLevel: randomFighterTotalS});
+            break;
+
+            case "dark":
+
+            const newFightersDS = fighters.filter(
+                function (e, i) {
+                    if (e.nation === 'Dark States') {
+                        return i;
+                    }
+                }
+            );
+
+            // get random fighter
+            const randomFighterDS = newFightersDS[Math.floor(Math.random() * newFightersDS.length)];
+
+            // generate random fighter's name
+            const randomFighterNameDS = randomFighterDS.name;
+            console.log(randomFighterNameDS);
+
+            //  generate random fighter's difficulty level
+            const randomFighterDiffDS = randomFighterDS.level;
+            const randomFighterTotalDS = randomFighterDiffDS[Math.floor(Math.random() * randomFighterDiffDS.length)];
+            console.log(randomFighterTotalDS);
+
+            // return result
+            res.render('random.ejs', {RandomFighter: randomFighterNameDS, RandomLevel: randomFighterTotalDS});
+            break;
+
+            case "brandt":
+
+            const newFightersBG = fighters.filter(
+                function (e, i) {
+                    if (e.nation === 'Brandt Gate') {
+                        return i;
+                    }
+                }
+            );
+
+            // get random fighter
+            const randomFighterBG = newFightersBG[Math.floor(Math.random() * newFightersBG.length)];
+
+            // generate random fighter's name
+            const randomFighterNameBG = randomFighterBG.name;
+            console.log(randomFighterNameBG);
+
+            //  generate random fighter's difficulty level
+            const randomFighterDiffBG = randomFighterBG.level;
+            const randomFighterTotalBG = randomFighterDiffBG[Math.floor(Math.random() * randomFighterDiffBG.length)];
+            console.log(randomFighterTotalBG);
+
+            // return result
+            res.render('random.ejs', {RandomFighter: randomFighterNameBG, RandomLevel: randomFighterTotalBG});
+            break;
+
+            case "lyrical":
+
+            const newFightersLM = fighters.filter(
+                function (e, i) {
+                    if (e.nation === 'Lyrical Monasterio') {
+                        return i;
+                    }
+                }
+            );
+
+            // get random fighter
+            const randomFighterLM = newFightersLM[Math.floor(Math.random() * newFightersLM.length)];
+
+            // generate random fighter's name
+            const randomFighterNameLM = randomFighterLM.name;
+            console.log(randomFighterNameLM);
+
+            //  generate random fighter's difficulty level
+            const randomFighterDiffLM = randomFighterLM.level;
+            const randomFighterTotalLM = randomFighterDiffLM[Math.floor(Math.random() * randomFighterDiffLM.length)];
+            console.log(randomFighterTotalLM);
+
+            // return result
+            res.render('random.ejs', {RandomFighter: randomFighterNameLM, RandomLevel: randomFighterTotalLM});
+            break;
     }
     
 

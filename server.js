@@ -1,6 +1,19 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import ejs from 'ejs';
+import pg from "pg";
+
+//Database for Fighter Arrays
+
+// const db = new pg.Client({
+//     user: "postgres",
+//     host: "localhost",
+//     database: "world",
+//     password: "BGudemy022490!$",
+//     port: 5432
+//   });
+//   db.connect();
+  
 
 const app = express();
 const port = 3000;

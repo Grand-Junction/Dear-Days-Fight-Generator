@@ -17,9 +17,12 @@ const db = new pg.Client({
 
 const app = express();
 const port = 3000;
+const __dirname = "C:/Users/brian/OneDrive/Desktop/Dear Days Fight Generator";
 
 // bodyparser for handling input
 app.use(bodyParser.urlencoded({extended: true}));
+// setting up views engine to render ejs files 
+app.set('view engine', 'ejs')
 // mounting middleware for rendering static files
 app.use(express.static('public'));
 
@@ -50,7 +53,7 @@ app.get('/random', async (req, res) => {
             console.log(randomFighterTotal);
 
             // return result
-            res.render('random.ejs', {RandomFighter: randomFighterName, RandomLevel: randomFighterTotal});
+            res.render('random', {RandomFighter: randomFighterName, RandomLevel: randomFighterTotal});
             
         } catch (error) {
             console.log(`It didn't work`, error);
